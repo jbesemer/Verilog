@@ -1,0 +1,139 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_003E70C8 .scope module, "sender" "sender" 2 3;
+ .timescale 0 0;
+v005F24E8_0 .net "enable", 0 0, C4<z>; 0 drivers
+v0060DF68_0 .net "mosi", 0 0, C4<z>; 0 drivers
+v0060DFD8_0 .net "reset", 0 0, C4<z>; 0 drivers
+v0060E060_0 .net "sclk", 0 0, C4<z>; 0 drivers
+S_003E6D20 .scope module, "testbench" "testbench" 3 12;
+ .timescale 0 0;
+v0060EA48_0 .net "clk", 0 0, v0060E0D0_0; 1 drivers
+v0060EAA0_0 .net "clr", 0 0, v0060E140_0; 1 drivers
+v0060EAF8_0 .net "data_init", 63 0, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; 0 drivers
+v0060EB50_0 .net "data_out", 63 0, L_0060EDF8; 1 drivers
+v0060EBA8_0 .net "enable", 0 0, v0060E1B0_0; 1 drivers
+v0060EC00_0 .var "initial_count", 7 0;
+v0060EC58_0 .net "load", 0 0, v0060E238_0; 1 drivers
+v0060ED10_0 .net "sio", 0 0, L_0060EDA0; 1 drivers
+S_0060E588 .scope module, "writer1" "writer" 3 28, 4 3, S_003E6D20;
+ .timescale 0 0;
+P_0060E614 .param/l "cwidth" 4 5, +C4<0110>;
+P_0060E628 .param/l "width" 4 4, +C4<01000000>;
+v0060E6D8_0 .var "data", 63 0;
+v0060E740_0 .alias "data_init", 63 0, v0060EAF8_0;
+v0060E798_0 .var "done", 0 0;
+v0060E820_0 .alias "enable", 0 0, v0060EBA8_0;
+v0060E8B0_0 .var "index", 5 0;
+v0060E908_0 .alias "load_data", 0 0, v0060EC58_0;
+v0060E960_0 .alias "mosi", 0 0, v0060ED10_0;
+v0060E9B8_0 .alias "sclk", 0 0, v0060EA48_0;
+E_005F3E78 .event posedge, v0060E238_0, v0060E0D0_0;
+L_0060EDA0 .part/v v0060E6D8_0, v0060E8B0_0, 1;
+S_0060E2A8 .scope module, "reader1" "reader" 3 29, 5 3, S_003E6D20;
+ .timescale 0 0;
+P_005F25DC .param/l "width" 5 4, +C4<01000000>;
+v0060E388_0 .var "data", 63 0;
+v0060E3F8_0 .alias "dout", 63 0, v0060EB50_0;
+v0060E468_0 .alias "enable", 0 0, v0060EBA8_0;
+v0060E4D8_0 .alias "mosi", 0 0, v0060ED10_0;
+v0060E530_0 .alias "sclk", 0 0, v0060EA48_0;
+E_005F25B8 .event posedge, v0060E0D0_0;
+L_0060EDF8 .concat [ 64 0 0 0], v0060E388_0;
+S_003E6C98 .scope module, "test1" "tester" 3 33, 3 38, S_003E6D20;
+ .timescale 0 0;
+v0060E0D0_0 .var "clk", 0 0;
+v0060E140_0 .var "clr", 0 0;
+v0060E1B0_0 .var "enable", 0 0;
+v0060E238_0 .var "load", 0 0;
+    .scope S_0060E588;
+T_0 ;
+    %wait E_005F3E78;
+    %load/v 8, v0060E908_0, 1;
+    %jmp/0xz  T_0.0, 8;
+    %load/v 8, v0060E740_0, 64;
+    %ix/load 0, 64, 0;
+    %assign/v0 v0060E6D8_0, 0, 8;
+    %ix/load 0, 6, 0;
+    %assign/v0 v0060E8B0_0, 0, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0060E798_0, 0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/v 8, v0060E820_0, 1;
+    %load/v 9, v0060E798_0, 1;
+    %inv 9, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_0.2, 8;
+    %load/v 8, v0060E8B0_0, 6;
+    %mov 14, 0, 26;
+    %addi 8, 1, 32;
+    %ix/load 0, 6, 0;
+    %assign/v0 v0060E8B0_0, 0, 8;
+    %load/v 8, v0060E8B0_0, 6;
+    %and/r 8, 8, 6;
+    %set/v v0060E798_0, 8, 1;
+T_0.2 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0060E2A8;
+T_1 ;
+    %wait E_005F25B8;
+    %load/v 8, v0060E468_0, 1;
+    %jmp/0xz  T_1.0, 8;
+    %load/v 8, v0060E4D8_0, 1;
+    %load/v 9, v0060E388_0, 64;
+    %ix/load 0, 64, 0;
+    %assign/v0 v0060E388_0, 0, 8;
+T_1.0 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_003E6C98;
+T_2 ;
+    %delay 1, 0;
+    %load/v 8, v0060E0D0_0, 1;
+    %inv 8, 1;
+    %set/v v0060E0D0_0, 8, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_003E6C98;
+T_3 ;
+    %set/v v0060E0D0_0, 0, 1;
+    %set/v v0060E140_0, 0, 1;
+    %set/v v0060E238_0, 0, 1;
+    %set/v v0060E1B0_0, 0, 1;
+    %delay 2, 0;
+    %set/v v0060E238_0, 1, 1;
+    %set/v v0060E140_0, 1, 1;
+    %delay 2, 0;
+    %set/v v0060E238_0, 0, 1;
+    %set/v v0060E140_0, 0, 1;
+    %delay 2, 0;
+    %set/v v0060E1B0_0, 1, 1;
+    %delay 24, 0;
+    %set/v v0060E1B0_0, 0, 1;
+    %delay 4, 0;
+    %vpi_call 3 69 "$finish";
+    %end;
+    .thread T_3;
+    .scope S_003E6D20;
+T_4 ;
+    %movi 8, 64, 8;
+    %set/v v0060EC00_0, 8, 8;
+    %vpi_call 3 16 "$dumpfile", "results.vcd";
+    %vpi_call 3 17 "$dumpvars";
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "./sender.v";
+    "tester.v";
+    "./writer.v";
+    "./reader.v";

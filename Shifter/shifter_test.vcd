@@ -1,0 +1,255 @@
+$date
+	Sun Sep 29 22:45:28 2013
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 1 ! clk $end
+$var wire 1 " clr $end
+$var wire 8 # data_in [7:0] $end
+$var wire 8 $ data_out [7:0] $end
+$var wire 1 % done $end
+$var wire 1 & enable $end
+$var wire 1 ' enabled $end
+$var wire 1 ( load $end
+$var wire 1 ) sio $end
+$var reg 8 * initial_count [7:0] $end
+$scope module writer $end
+$var wire 1 ! clk $end
+$var wire 1 & enable $end
+$var wire 8 + init_value [7:0] $end
+$var wire 1 ( load $end
+$var wire 1 ) sout $end
+$var reg 8 , data [7:0] $end
+$var reg 1 - done $end
+$var reg 3 . index [2:0] $end
+$upscope $end
+$scope module reader $end
+$var wire 1 ! clk $end
+$var wire 1 " clr $end
+$var wire 1 % done $end
+$var wire 8 / dout [7:0] $end
+$var wire 1 & enable $end
+$var wire 1 ) si $end
+$var reg 9 0 data [8:0] $end
+$upscope $end
+$scope module enabler1 $end
+$var wire 1 ! clk $end
+$var wire 1 & enable $end
+$var wire 1 ' enabled $end
+$var wire 8 1 initial_count [7:0] $end
+$var wire 1 ( reset $end
+$var reg 8 2 count [7:0] $end
+$upscope $end
+$scope module test1 $end
+$var reg 1 3 clk $end
+$var reg 1 4 clr $end
+$var reg 8 5 data_in [7:0] $end
+$var reg 1 6 enable $end
+$var reg 1 7 load $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+07
+06
+b11000011 5
+04
+03
+bx 2
+b1100 1
+bx 0
+bx /
+bx .
+x-
+bx ,
+b11000011 +
+b1100 *
+x)
+0(
+0'
+0&
+x%
+bx $
+b11000011 #
+0"
+0!
+$end
+#1
+13
+1!
+#2
+b1 $
+b1 /
+0%
+b1 0
+b1100 2
+0-
+b0 .
+1)
+b11000011 ,
+03
+0!
+14
+1"
+17
+1(
+#3
+13
+1!
+#4
+03
+0!
+04
+0"
+07
+0(
+#5
+13
+1!
+#6
+1'
+03
+0!
+16
+1&
+#7
+b11 $
+b11 /
+b1 .
+b1011 2
+b11 0
+13
+1!
+#8
+03
+0!
+#9
+b111 $
+b111 /
+b1010 2
+b10 .
+0)
+b111 0
+13
+1!
+#10
+03
+0!
+#11
+b1110 $
+b1110 /
+b11 .
+b1001 2
+b1110 0
+13
+1!
+#12
+03
+0!
+#13
+b11100 $
+b11100 /
+b1000 2
+b100 .
+b11100 0
+13
+1!
+#14
+03
+0!
+#15
+b111000 $
+b111000 /
+b101 .
+b111 2
+b111000 0
+13
+1!
+#16
+03
+0!
+#17
+b1110000 $
+b1110000 /
+b110 2
+b110 .
+1)
+b1110000 0
+13
+1!
+#18
+03
+0!
+#19
+b11100001 $
+b11100001 /
+b111 .
+b101 2
+b11100001 0
+13
+1!
+#20
+03
+0!
+#21
+b11000011 $
+b11000011 /
+1%
+b100 2
+1-
+b0 .
+b111000011 0
+13
+1!
+#22
+03
+0!
+#23
+b11 2
+13
+1!
+#24
+03
+0!
+#25
+b10 2
+13
+1!
+#26
+03
+0!
+#27
+b1 2
+13
+1!
+#28
+03
+0!
+#29
+0'
+b0 2
+13
+1!
+#30
+03
+0!
+06
+0&
+#31
+13
+1!
+#32
+03
+0!
+#33
+13
+1!
+#34
+03
+0!

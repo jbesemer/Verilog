@@ -1,0 +1,240 @@
+$date
+	Mon Sep 30 01:53:39 2013
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module sender $end
+$var wire 1 ! enable $end
+$var wire 1 " mosi $end
+$var wire 1 # reset $end
+$var wire 1 $ sclk $end
+$upscope $end
+$scope module testbench $end
+$var wire 1 % clk $end
+$var wire 1 & clr $end
+$var wire 64 ' data_init [63:0] $end
+$var wire 64 ( data_out [63:0] $end
+$var wire 1 ) enable $end
+$var wire 1 * load $end
+$var wire 1 + sio $end
+$var reg 8 , initial_count [7:0] $end
+$scope module writer1 $end
+$var wire 64 - data_init [63:0] $end
+$var wire 1 ) enable $end
+$var wire 1 * load_data $end
+$var wire 1 + mosi $end
+$var wire 1 % sclk $end
+$var reg 64 . data [63:0] $end
+$var reg 1 / done $end
+$var reg 6 0 index [5:0] $end
+$upscope $end
+$scope module reader1 $end
+$var wire 64 1 dout [63:0] $end
+$var wire 1 ) enable $end
+$var wire 1 + mosi $end
+$var wire 1 % sclk $end
+$var reg 64 2 data [63:0] $end
+$upscope $end
+$scope module test1 $end
+$var reg 1 3 clk $end
+$var reg 1 4 clr $end
+$var reg 1 5 enable $end
+$var reg 1 6 load $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+06
+05
+04
+03
+bx 2
+bx 1
+bx 0
+x/
+bx .
+bz -
+b1000000 ,
+x+
+0*
+0)
+bx (
+bz '
+0&
+0%
+z$
+z#
+z"
+z!
+$end
+#1
+13
+1%
+#2
+0/
+b0 0
+z+
+bz .
+03
+0%
+14
+1&
+16
+1*
+#3
+13
+1%
+#4
+03
+0%
+04
+0&
+06
+0*
+#5
+13
+1%
+#6
+03
+0%
+15
+1)
+#7
+bxz 2
+bxz (
+bxz 1
+b1 0
+13
+1%
+#8
+03
+0%
+#9
+bxzz 2
+bxzz (
+bxzz 1
+b10 0
+13
+1%
+#10
+03
+0%
+#11
+bxzzz 2
+bxzzz (
+bxzzz 1
+b11 0
+13
+1%
+#12
+03
+0%
+#13
+bxzzzz 2
+bxzzzz (
+bxzzzz 1
+b100 0
+13
+1%
+#14
+03
+0%
+#15
+bxzzzzz 2
+bxzzzzz (
+bxzzzzz 1
+b101 0
+13
+1%
+#16
+03
+0%
+#17
+bxzzzzzz 2
+bxzzzzzz (
+bxzzzzzz 1
+b110 0
+13
+1%
+#18
+03
+0%
+#19
+bxzzzzzzz 2
+bxzzzzzzz (
+bxzzzzzzz 1
+b111 0
+13
+1%
+#20
+03
+0%
+#21
+bxzzzzzzzz 2
+bxzzzzzzzz (
+bxzzzzzzzz 1
+b1000 0
+13
+1%
+#22
+03
+0%
+#23
+bxzzzzzzzzz 2
+bxzzzzzzzzz (
+bxzzzzzzzzz 1
+b1001 0
+13
+1%
+#24
+03
+0%
+#25
+bxzzzzzzzzzz 2
+bxzzzzzzzzzz (
+bxzzzzzzzzzz 1
+b1010 0
+13
+1%
+#26
+03
+0%
+#27
+bxzzzzzzzzzzz 2
+bxzzzzzzzzzzz (
+bxzzzzzzzzzzz 1
+b1011 0
+13
+1%
+#28
+03
+0%
+#29
+bxzzzzzzzzzzzz 2
+bxzzzzzzzzzzzz (
+bxzzzzzzzzzzzz 1
+b1100 0
+13
+1%
+#30
+03
+0%
+05
+0)
+#31
+13
+1%
+#32
+03
+0%
+#33
+13
+1%
+#34
+03
+0%
